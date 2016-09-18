@@ -9,6 +9,5 @@ $(document).ready(function(){
 					})(i);
 				}
 			}
-			$('#result-wrapper').addClass('active');
 	});
 });
