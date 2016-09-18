@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="mainjs.js"></script>  
+  </head>
+  <body>
+    <div id="main-wrapper">
+      <h1>Choose a category</h1>
+      <h2>This is a Javascript:</h2>
+      <div id="categoryId-1" class="texts">
+        <textarea rows="18" cols="100" readonly spellcheck="false">
+          <script type="text/javascript">
+            $('#submit').on('click', function(){
+              if($('#result').contents().length == 0){
+                for(var i = 1; i < 11; i++){
+                  (function(ind) {
+                    setTimeout(function(){
+                      $('#result').append('<span class="scale">'+' ' + ind + ' ' +'</span>');
+                    }
+                               , 500 + (100 * ind));
+                  }
+                  )(i);
+                }
+                $('#result-wrapper').addClass('active');
+              }
+            }
+                            }
+                           );
+          </script>
+        </textarea>
+      </div>
+      <div id="result-wrapper" class="hide">
+        <div class="header-wrapper">
+          <h2>result</h2>
+        </div>
+        <div class="return-value-wrapper">
+          <span id="result"></span>
+        </div>
+      </div>
+      <div id="submit-wrapper">
+        <button id="submit" class="button hide">Try Me</button> 
+      </div>
+    </div>
+    </div>    
+  </body>
+</html>
