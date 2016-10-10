@@ -8,34 +8,36 @@
   </head>
   <body>
     <div id="main-wrapper">
-      <h1>This is a Javascript For Loop</h1>
-      <textarea rows="15" cols="85" readonly spellcheck="false">
-         <script type="text/javascript">
-           $('#submit').on('click', function(){
-             if($('#result').contents().length == 0){
-               for(var i = 1; i < 11; i++){
-                (function(ind) {
-                   setTimeout(function(){
-                     $('#result').append('<span class="scale">'+' ' + ind + ' ' +'</span>');
-                  }, 500 + (100 * ind));
-                })(i);
+      <div class="row">
+         <h1>This is a Javascript For Loop</h1>
+          <p>A for loop in any programming language, goes through a block of code until the loop is told to end.  In the code below, I have written a for loop to count from 1 to 10. For every number the loop counts, i've used the javascript framework "Jquery", to find the div with the id of "Result" and append a span with the css class of "Scale".  The the scale class will utilize css3 keyframe animations to scale each number to blow them up a bit then reduce them back down to their original size by the end of the animation.  You'll also notice there is a self invoked function wrapped around each time the class of "scale" is appended to the div with the id of "result".  This function sets a time out so each number will appear one after the other and not all at once.</p>
+      </div>
+      <div class="row">
+        <textarea rows="15" cols="85" readonly spellcheck="false">
+             <script type="text/javascript">
+               $('#submit').on('click', function(){
+                 if($('#result').contents().length == 0){
+                   for(var i = 1; i < 11; i++){
+                    (function(ind) {
+                       setTimeout(function(){
+                         $('#result').append('<span class="scale">'+' ' + ind + ' ' +'</span>');
+                      }, 500 + (100 * ind));
+                    })(i);
+                  }
+                }
               }
-            }
-          }
-        </script>
-      </textarea>
-      <div id="result-wrapper">
-        <div class="header-wrapper">
-          <h2>result</h2>
-        </div>
+            </script>
+          </textarea>
+      </div>   
+      <div class="row">
+        <h2>result</h2>
         <div class="return-value-wrapper">
-          <span id="result"></span>
+              <span id="result"></span>
         </div>
+      </div> 
+      <div class="row">
+            <button id="submit" class="button">Try Me</button> 
       </div>
-      <div id="submit-wrapper">
-        <button id="submit" class="button">Try Me</button> 
-      </div>
-    </div>
     </div>    
   </body>
 </html>
